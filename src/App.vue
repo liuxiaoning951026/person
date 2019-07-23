@@ -1,17 +1,20 @@
 <template>
   <div id="app">
     <!-- <img src="./assets/logo.png"> -->
-    <hello-world></hello-world>
-    <router-view/>
+    <!-- <hello-world></hello-world> -->
+    <first-component></first-component>
+    <!-- <router-view/> -->
   </div>
 </template>
 
 <script>
 import helloWorld from './components/HelloWorld'
+import firstComponent from './components/first-fcomponent.vue'
 export default {
   name: 'App',
   components: {
-    helloWorld
+    helloWorld,
+    firstComponent
   }
 }
 </script>

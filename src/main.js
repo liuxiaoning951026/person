@@ -14,3 +14,12 @@ new Vue({
   components: { App },
   template: '<App/>'
 })
+
+new Vue({
+  el: 'title',
+  computed: {
+    title () {
+      return store.state.title
+    }
+  }
+})
