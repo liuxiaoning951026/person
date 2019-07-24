@@ -2,7 +2,7 @@
   <div>
     <div class="outer-div">
       {{title}}
-      <!-- <el-button type="primary"></el-button> -->
+  <el-button type="primary">主要按钮</el-button>
     </div>
   </div>
 </template>
