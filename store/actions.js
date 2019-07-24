@@ -15,7 +15,7 @@ export default {
     })
   },
   changeTitleSync ({ commit }, title) {
-    console.log(commit)
+    // console.log(commit)
     setTimeout(() => {
       commit('changeTitle', title)
     }, 3000)

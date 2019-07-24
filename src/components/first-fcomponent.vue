@@ -2,6 +2,7 @@
   <div>
     <div class="outer-div">
       {{title}}
+      <!-- <el-button type="primary"></el-button> -->
     </div>
   </div>
 </template>
@@ -87,7 +88,7 @@ export default {
       ck,
       tm
     }).then((res) => {
-      console.log(res)
+      // console.log(res)
       this.$store.dispatch('changeTitleSync', res)
     })
   }
