@@ -7,7 +7,7 @@
       <router-link to="/slot">Go to Foo</router-link>
       <router-link to="/slot-parents">slot-parents</router-link>
       <router-link to="/async-component">async-component</router-link>
-      <router-link to="/watch-component"></router-link>
+      <router-link to="/watch-component">watch-component</router-link>
     </p>
     <router-view/>
   </div>
