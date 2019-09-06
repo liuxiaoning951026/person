@@ -32,6 +32,19 @@ export default new Router({
       path: '/watch-component',
       name: 'watch-component',
       component: () => import('../components/watch-component.vue')
+    },
+    {
+      path: '/window-history-component',
+      name: 'window-history-component',
+      component: () => import('../components/windowHistory.vue'),
+      meta: {
+        title: '大放送'
+      }
+    },
+    {
+      path: '/zhengze',
+      name: 'zhengze',
+      component: () => import('../components/zhengze.vue')
     }
   ]
 })

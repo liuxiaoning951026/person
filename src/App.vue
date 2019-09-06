@@ -8,6 +8,8 @@
       <router-link to="/slot-parents">slot-parents</router-link>
       <router-link to="/async-component">async-component</router-link>
       <router-link to="/watch-component">watch-component</router-link>
+      <router-link to="/window-history-component">window-history-component</router-link>
+      <router-link to="/zhengze">zhengze</router-link>
     </p>
     <router-view/>
   </div>
