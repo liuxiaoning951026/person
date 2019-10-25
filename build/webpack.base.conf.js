@@ -22,12 +22,12 @@ const createLintingRule = () => ({
 module.exports = {
   context: path.resolve(__dirname, '../'),
   entry: {
-    app: './src/main.js'
+    app: './src/main.js' // 入口文件
   },
   output: {
-    path: config.build.assetsRoot,
-    filename: '[name].js',
-    publicPath: process.env.NODE_ENV === 'production'
+    path: config.build.assetsRoot, // 打包输出路径
+    filename: '[name].js',  // 打包后的名字
+    publicPath: process.env.NODE_ENV === 'production' // html引用路径，在这里是本地地址
       ? config.build.assetsPublicPath
       : config.dev.assetsPublicPath
   },

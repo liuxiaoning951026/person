@@ -49,7 +49,26 @@ export default {
 
       // window操作系统文件路径
       // 要求匹配F:\study\javascript\regex\cccc
-      // let res = /^[a-zA-Z]:\\([^\\:*<>|"?\r\n/]+\\)*$/
+      // 文件夹文件名不能包含一些特殊字符  [^\\:*<>|"?\r\n/]
+      // 1、匹配前缀 F:/     [a-zA-Z]:\\
+      // 2、匹配文件名称\     （^\\:*<>|"?\r\n/）
+      // 3、匹配文件名称可以不加\ (^\\:*<>|"\r\n/)
+      // let res = /^[a-zA-Z]:\\([^\\:*<>|"?\r\n/]+\\)*([^\\:*<>|"?\r\n/]+)?$/
+      // console.log(res.test('F:\\study\\javascript\\regex\\regular expression.pdf'))
+
+      // 匹配id
+      // let string = '<div id="container" class="main"></div>'
+      // // let res = /id=".*"/
+      // let res = /id="[^"]*"/ // 表示除了双引号之外的任意字符
+      // console.log(string.match(res)) // 。表示匹配任意字符
+
+      // 匹配用户名 4-16位（字母数字下划线减号都可以）
+      // let res = /^[\w/-]{4, 16}$/
+      // console.log(res.test('wew22eee34dd3fgf'))
+
+      // 匹配密码强度 （最少六位，包括至少1个大写字母，一个小写字母，一个数字，一个特殊字符）
+      // `      let res = /^([a-zA-Z0-9]+){6,}$/
+      //       console.log(res.test('iFat3#'))`
     }
   },
   created () {
