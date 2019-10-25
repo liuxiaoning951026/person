@@ -45,6 +45,11 @@ export default new Router({
       path: '/zhengze',
       name: 'zhengze',
       component: () => import('../components/zhengze.vue')
+    },
+    {
+      path: '/emit-on-comm',
+      name: 'emit-on-comm',
+      component: () => import('../components/emit-on-comm.vue')
     }
   ]
 })

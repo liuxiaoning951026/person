@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
+    <h2 @click="toCheck" style="cursor: pointer;">Essential Links</h2>
     <ul>
       <li>
         <a
@@ -84,11 +84,17 @@
 </template>
 
 <script>
+import bus from '../bus/bus.js'
 export default {
   name: 'HelloWorld',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
+    }
+  },
+  methods: {
+    toCheck () {
+      bus.$emit('data', this.msg)
     }
   }
 }

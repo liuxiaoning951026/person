@@ -10,6 +10,7 @@
       <router-link to="/watch-component">watch-component</router-link>
       <router-link to="/window-history-component">window-history-component</router-link>
       <router-link to="/zhengze">zhengze</router-link>
+      <router-link to="/emit-on-comm">emit/on</router-link>
     </p>
     <router-view/>
   </div>

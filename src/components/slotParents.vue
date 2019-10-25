@@ -29,12 +29,31 @@
         {{ slotProps }}
       </template>
     </slot-component>
+    <h3>aaa{{msg}}</h3>
+    <h3>我是msg</h3>
   </div>
 </template>
 <script>
+import bus from '../bus/bus.js'
 import slotComponent from './slotExprise.vue'
 export default {
   name: 'slot-parents',
-  components: { slotComponent }
+  components: { slotComponent },
+  watch: {
+    msg: function (newVal) {
+      console.log('newVal===', newVal)
+    }
+  },
+  data () {
+    return {
+      msg: ''
+    }
+  },
+  created () {
+    let self = this
+    bus.$on('data', function (val) {
+      self.msg = val
+    })
+  }
 }
 </script>
