@@ -55,6 +55,11 @@ export default new Router({
       path: '/listeners-attrs',
       name: 'listeners-attrs',
       component: () => import('../components/listeners-attrs.vue')
+    },
+    {
+      path: '/sync-components',
+      name: 'sync-components',
+      component: () => import('../components/sync.vue')
     }
   ]
 })
