@@ -50,6 +50,11 @@ export default new Router({
       path: '/emit-on-comm',
       name: 'emit-on-comm',
       component: () => import('../components/emit-on-comm.vue')
+    },
+    {
+      path: '/listeners-attrs',
+      name: 'listeners-attrs',
+      component: () => import('../components/listeners-attrs.vue')
     }
   ]
 })
