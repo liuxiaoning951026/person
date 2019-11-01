@@ -60,6 +60,11 @@ export default new Router({
       path: '/sync-components',
       name: 'sync-components',
       component: () => import('../components/sync.vue')
+    },
+    {
+      path: '/watch-deep',
+      name: 'watch-deep',
+      component: () => import('../components/watch-expeise.vue')
     }
   ]
 })

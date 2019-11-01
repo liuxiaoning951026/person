@@ -13,6 +13,7 @@
       <router-link to="/emit-on-comm">emit/on</router-link>
       <router-link to="/listeners-attrs">listeners-attrs</router-link>
       <router-link to="/sync-components">sync-components</router-link>
+      <router-link to="/watch-deep">watch-deep</router-link>
     </p>
     <router-view/>
   </div>
