@@ -48,8 +48,12 @@ export default {
   },
   methods: {
     check () {
-      this.obj.a = 'liuning'
-      console.log(this.obj)
+      // this.obj.a = 'liuning'
+      // console.log(this.obj)
+      console.log('this.$watch====', this.$watch)
+      this.$nextTick(() => {
+        console.log(this.obj.a)
+      })
     }
   },
   mounted () {

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <span >
+    <span style="border: 1px solid green">
       具名插槽
     </span>
     <slot :user="user">
