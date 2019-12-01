@@ -60,16 +60,16 @@
     </slot-component> -->
       <!-- <template  #msg="{msg}">
         {{msg}}
-      </template> -->
+      </div> -->
       <!-- <template v-slot:msg="msg">
         {{msg}}
       </template> -->
       <!-- <template v-slot>
         <p>这是匿名插槽</p>
       </template> -->
-      <template #a>
-        <p>我是具名插槽</p>
-      </template>
+        <template slot="name" slot-scope="msg">
+          <p style="fontSize: 30px">我是具名插槽{{msg}}</p>
+        </template>
     </slot-Com1>
   </div>
 </template>
@@ -95,6 +95,7 @@ export default {
     bus.$on('data', function (val) {
       self.msg = val
     })
+    console.log(self)
   }
 }
 </script>

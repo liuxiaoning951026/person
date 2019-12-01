@@ -14,8 +14,12 @@
     </div> -->
 
     <!-- 具名插槽 -->
-    <div style="border: 1px solid red">
-      <slot name="a"></slot>
+    <div style="border: 1px solid red;">
+      <slot name="name" v-if="$scopedSlots.name" :msg="msg">
+      </slot>
+      <div style="background: red; width: 100px; height: 100px" v-else>
+
+      </div>
     </div>
     <!-- <div>
       <p>这是一个具名插槽</p>
