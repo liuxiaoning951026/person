@@ -14,6 +14,7 @@
       <router-link to="/listeners-attrs">listeners-attrs</router-link>
       <router-link to="/sync-components">sync-components</router-link>
       <router-link to="/watch-deep">watch-deep</router-link>
+      <router-link to="/css3">css3-animation</router-link>
     </p>
     <router-view/>
   </div>

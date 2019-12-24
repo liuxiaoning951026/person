@@ -65,6 +65,11 @@ export default new Router({
       path: '/watch-deep',
       name: 'watch-deep',
       component: () => import('../components/watch-expeise.vue')
+    },
+    {
+      path: '/css3',
+      name: 'css3',
+      component: () => import('../components/animation.vue')
     }
   ]
 })
