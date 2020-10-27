@@ -44,7 +44,7 @@
 
         for (var i = 0; i < 60; i++) { //绘制刻度。
           ctx.save();
-          ctx.rotate(i * (pi / 180) * 6); //旋转坐标轴。坐标轴x的正方形从 向上开始算起
+          ctx.rotate(i * pi / 30); //旋转坐标轴。坐标轴x的正方形从 向上开始算起
           ctx.beginPath();
           ctx.moveTo(110, 0);
           ctx.lineTo(140, 0);
@@ -66,9 +66,9 @@
         var h = time.getHours();
 
         var pi = Math.PI;
-        var secondAngle = pi / 180 * 6 * s; //计算出来s针的弧度
-        var minuteAngle = pi / 180 * 6 * m + secondAngle / 60; //计算出来分针的弧度
-        var hourAngle = pi / 180 * 30 * h + minuteAngle / 12; //计算出来时针的弧度
+        var secondAngle = s * pi / 30; //计算出来s针的弧度
+        var minuteAngle = m * pi / 30 + secondAngle / 60; //计算出来分针的弧度
+        var hourAngle = pi / 180 * 30 * h + minuteAngle / 60; //计算出来时针的弧度
 
         myAction.drawHand(hourAngle, 60, 6, "red", ctx); //绘制时针
         myAction.drawHand(minuteAngle, 106, 4, "green", ctx); //绘制分针
@@ -85,7 +85,7 @@
       drawHand: function (angle, len, width, color, ctx) {
         ctx.save();
         ctx.translate(250, 150);               //把坐标轴的远点平移到原来的中心
-        ctx.rotate(-Math.PI / 2 + angle);      //旋转坐标轴。 x轴就是针的角度
+        ctx.rotate(angle - Math.PI / 2);      //旋转坐标轴。 x轴就是针的角度
         ctx.beginPath();
         ctx.moveTo(-4, 0);
         ctx.lineTo(len, 0); // 沿着x轴绘制针
