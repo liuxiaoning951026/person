@@ -3,7 +3,7 @@
     <!-- <img src="./assets/logo.png"> -->
     <!-- <hello-world></hello-world> -->
     <!-- <first-component></first-component> -->
-    <p class="router-style">
+    <!-- <p class="router-style">
       <router-link to="/slot">Go to Foo</router-link>
       <router-link to="/slot-parents">slot-parents</router-link>
       <router-link to="/async-component">async-component</router-link>
@@ -15,32 +15,35 @@
       <router-link to="/sync-components">sync-components</router-link>
       <router-link to="/watch-deep">watch-deep</router-link>
       <router-link to="/css3">css3-animation</router-link>
-    </p>
-    <router-view/>
+    </p> -->
+    <router-view />
   </div>
 </template>
 
 <script>
-import helloWorld from './components/HelloWorld'
-import firstComponent from './components/first-fcomponent.vue'
+import helloWorld from "./components/HelloWorld";
+import firstComponent from "./components/first-fcomponent.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     helloWorld,
     firstComponent
   }
-}
+};
 </script>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  /* margin-top: 60px; */
+  width: 100%;
+  height: 100%;
+  /* border: 3px solid blue; */
 }
 .router-style {
   float: left;
