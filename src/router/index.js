@@ -12,7 +12,6 @@ export default new Router({
       path: '/',
       // name: 'home',
       redirect: '/home'
-
       // redirect: '/slot'
     },
     {
@@ -81,5 +80,5 @@ export default new Router({
     }
   ],
   mode: 'history',
-  baseUrl: '/person'
+  base: '/person/'
 })
