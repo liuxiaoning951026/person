@@ -75,6 +75,11 @@ export default new Router({
           path: '/css3',
           name: 'css3',
           component: () => import('../components/animation.vue')
+        },
+        {
+          path: '/pdf-component',
+          name: 'pdf-component',
+          component: () => import('../components/pdf-component.vue')
         }
       ]
     }

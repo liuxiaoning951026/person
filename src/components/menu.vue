@@ -34,7 +34,7 @@
           <el-menu-item index="/window-history-component">选项1</el-menu-item>
         </el-submenu>
       </el-submenu>
-      <el-menu-item index="/zhengze">
+      <el-menu-item index="/pdf-component">
         <i class="el-icon-menu"></i>
         <span slot="title">导航二</span>
       </el-menu-item>
@@ -52,27 +52,27 @@
 <script>
 export default {
   computed: {
-    onRoutes() {
+    onRoutes () {
       // console.log(this.$route);
-      return this.$route.path; // 计算当前路由对应的菜单项
+      return this.$route.path // 计算当前路由对应的菜单项
     }
   },
   methods: {
-    handleOpen(key, keyPath) {
-      console.log(key, keyPath);
+    handleOpen (key, keyPath) {
+      console.log(key, keyPath)
     },
-    handleClose(key, keyPath) {
-      console.log(key, keyPath);
+    handleClose (key, keyPath) {
+      console.log(key, keyPath)
     },
-    handleSelect(key) {
-      console.log(key);
+    handleSelect (key) {
+      console.log(key)
       this.$router.push({
         path: key,
-        params: { data: "query" }
-      });
+        params: { data: 'query' }
+      })
     }
   }
-};
+}
 </script>
 <style scoped>
 .menu {
