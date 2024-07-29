@@ -22,20 +22,22 @@
         </div>
       </div>
       <div class="right-part">
-        <!-- <iframe
+        <!-- src属性指向自定义页面查看器 -->
+        <iframe
           id="pdfViewer"
-          src="/static/pdf.html"
+          src="/static/default/default.html"
           width="100%"
           height="100%"
-        ></iframe> -->
+        ></iframe>
+
         <!-- src属性指向PDF.js的查看器页面  -->
-        <iframe
+        <!-- <iframe
           src="https://mozilla.github.io/pdf.js/web/viewer.html"
           width="100%"
           height="600px"
           style="border: none;"
         >
-        </iframe>
+        </iframe> -->
       </div>
     </div>
 
@@ -70,6 +72,7 @@ export default {
           pdf.getPage(i).then(page => {
             let pageDiv = document.getElementById(`page-${i}`);
             let viewport = page.getViewport(this.scale);
+            console.log("viewport======", viewport);
             let canvas = document.getElementById(idName + i);
             let context = canvas.getContext("2d");
             canvas.height = viewport.height;
@@ -114,11 +117,11 @@ export default {
     loadPdfIframe() {
       // 获取iframe元素
       var iframe = document.getElementById("pdfViewer");
-      console.log("iframe=====", iframe);
+      // console.log("iframe=====", iframe);
       if (iframe) {
         // 确保iframe内容加载完成
         iframe.onload = function() {
-          console.log("dfsdf====", iframe.contentWindow);
+          // console.log('dfsdf====', iframe.contentWindow)
           // 在iframe中渲染PDF
           iframe.contentWindow.postMessage(
             {
@@ -138,8 +141,8 @@ export default {
     }
   },
   mounted() {
-    this.loadPdf();
-    this.loadPdfIframe();
+    // this.loadPdf();
+    // this.loadPdfIframe();
   }
 };
 </script>
