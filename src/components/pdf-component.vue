@@ -8,14 +8,34 @@
         style="border: 1px solid red"
       ></canvas>
     </div> -->
-    <div class="scroll-container">
-      <div
-        v-for="item in totals"
-        :id="`page-${item}`"
-        :key="item"
-        class="pdf-box"
-      >
-        <canvas :id="'canvas-pdf-' + item" class="canvas-pdf"></canvas>
+    <div class="div-container">
+      <div class="left-part">
+        <div class="scroll-container">
+          <div
+            v-for="item in totals"
+            :id="`page-${item}`"
+            :key="item"
+            class="pdf-box"
+          >
+            <canvas :id="'canvas-pdf-' + item" class="canvas-pdf"></canvas>
+          </div>
+        </div>
+      </div>
+      <div class="right-part">
+        <!-- <iframe
+          id="pdfViewer"
+          src="/static/pdf.html"
+          width="100%"
+          height="100%"
+        ></iframe> -->
+        <!-- src属性指向PDF.js的查看器页面  -->
+        <iframe
+          src="https://mozilla.github.io/pdf.js/web/viewer.html"
+          width="100%"
+          height="600px"
+          style="border: none;"
+        >
+        </iframe>
       </div>
     </div>
 
@@ -28,7 +48,8 @@ import { TextLayerBuilder } from "pdfjs-dist/web/pdf_viewer";
 import "pdfjs-dist/web/pdf_viewer.css";
 const PDFJS = require("pdfjs-dist");
 PDFJS.GlobalWorkerOptions.workerSrc = require("pdfjs-dist/build/pdf.worker.min");
-
+window.PDFJS = PDFJS;
+console.log("dfsdfsdf===cvcx", window.PDFJS);
 export default {
   data() {
     return {
@@ -42,7 +63,7 @@ export default {
       PDFJS.getDocument(this.pdfUrl).then(pdf => {
         let totalPage = pdf.numPages;
         let idName = "canvas-pdf-";
-        console.log("pdf=====", pdf, totalPage);
+        // console.log('pdf=====', pdf, totalPage)
         this.createCanvas(totalPage, idName);
 
         for (let i = 1; i <= totalPage; i++) {
@@ -88,18 +109,59 @@ export default {
       for (let i = 1; i <= totalPages; i++) {
         this.totals.push(i);
       }
+    },
+
+    loadPdfIframe() {
+      // 获取iframe元素
+      var iframe = document.getElementById("pdfViewer");
+      console.log("iframe=====", iframe);
+      if (iframe) {
+        // 确保iframe内容加载完成
+        iframe.onload = function() {
+          console.log("dfsdf====", iframe.contentWindow);
+          // 在iframe中渲染PDF
+          iframe.contentWindow.postMessage(
+            {
+              action: "load",
+              url: this.pdfUrl
+            },
+            "*"
+          );
+        };
+      }
+    },
+
+    getPdfUrl() {
+      const urlPath = fillPublicPath("/static/pdf.html");
+      const urlCode = encodeURIComponent(this.url);
+      this.pdfUrl = `${urlPath}?file=${urlCode}&source=detail`;
     }
   },
   mounted() {
     this.loadPdf();
+    this.loadPdfIframe();
   }
 };
 </script>
 <style scoped>
 .pdf-component {
 }
+
+.div-container {
+  width: 100%;
+  display: flex;
+}
+.left-part {
+  border: 1px solid green;
+  width: 50%;
+}
+.right-part {
+  border: 1px solid rgb(207, 214, 8);
+  width: 50%;
+}
+
 .scroll-container {
-  border: 3px solid red;
+  /* border: 3px solid red; */
   height: 600px;
   overflow: hidden;
   overflow-y: scroll;

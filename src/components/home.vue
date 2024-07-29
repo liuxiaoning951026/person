@@ -27,11 +27,11 @@ export default {
 .left-com {
   width: 15%;
   height: 100%;
-  border: 1px solid rgb(255, 132, 0);
+  /* border: 1px solid rgb(255, 132, 0); */
 }
 .right-com {
   flex: 1;
   height: 100%;
-  border: 1px solid rgb(0, 255, 13);
+  /* border: 1px solid rgb(0, 255, 13); */
 }
 </style>

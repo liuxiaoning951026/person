@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<style>
+  #pdf-container {
+    width: 100%;
+    height: 100%;
+    /* border: 3px solid red; */
+  }
+</style>
+
+<head>
+  <title>PDF Viewer</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <script src="node_modules/pdfjs-dist/build/pdf.js"></script>
+</head>
+
+  <script>
+
+    console.log('我已进入到script中===', window)
+    // 接收消息并加载PDF
+    window.addEventListener('message', function (event) {
+      console.log('event======', event)
+      var action = event.data.action;
+      if (action === 'load') {
+        var pdfUrl = event.data.url;
+        // 使用PDF.js API加载并渲染PDF
+        // PDFJS.getDocument(pdfUrl).then(function (pdf) {
+        //   // 渲染PDF的代码（这里省略）
+        // });
+      }
+    });
+  </script>
+
+<body>
+  <div id="pdf-container"><h1>北京欢迎你～～～</h1></div>
+</body>
+
+</html>
