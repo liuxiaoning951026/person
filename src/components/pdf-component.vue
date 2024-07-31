@@ -25,7 +25,7 @@
         <!-- src属性指向自定义页面查看器 -->
         <iframe
           id="pdfViewer"
-          src="/static/default/default.html"
+          src="/static/default/default.html?file=dalei001.pdf"
           width="100%"
           height="100%"
         ></iframe>
@@ -41,6 +41,20 @@
       </div>
     </div>
 
+    <el-row style="margin-top: 20px;border: 1px solid red;">
+      <el-col :span="12">
+        <div class="second-pdf">
+          <div class="item" v-for="(item, ind) in totals" :key="ind">
+            <pdf :src="pdfUrl" :page="item"></pdf>
+          </div>
+        </div>
+      </el-col>
+
+      <el-col :span="12">
+        ddf
+      </el-col>
+    </el-row>
+
     <!-- <img src="../assets/logo.png" style="border: 3px solid red" /> -->
   </div>
 </template>
@@ -48,10 +62,13 @@
 <script>
 import { TextLayerBuilder } from "pdfjs-dist/web/pdf_viewer";
 import "pdfjs-dist/web/pdf_viewer.css";
+
+import pdf from "vue-pdf";
 const PDFJS = require("pdfjs-dist");
 PDFJS.GlobalWorkerOptions.workerSrc = require("pdfjs-dist/build/pdf.worker.min");
 window.PDFJS = PDFJS;
 console.log("dfsdfsdf===cvcx", window.PDFJS);
+
 export default {
   data() {
     return {
@@ -59,6 +76,9 @@ export default {
       scale: 1,
       totals: []
     };
+  },
+  components: {
+    pdf
   },
   methods: {
     loadPdf() {
@@ -134,15 +154,17 @@ export default {
       }
     },
 
-    getPdfUrl() {
-      const urlPath = fillPublicPath("/static/pdf.html");
-      const urlCode = encodeURIComponent(this.url);
-      this.pdfUrl = `${urlPath}?file=${urlCode}&source=detail`;
+    loadVuePdf() {
+      PDFJS.getDocument(this.pdfUrl).then(pdf => {
+        let totalPage = pdf.numPages;
+        this.createCanvas(totalPage);
+      });
     }
   },
   mounted() {
     // this.loadPdf();
     // this.loadPdfIframe();
+    this.loadVuePdf();
   }
 };
 </script>
@@ -175,5 +197,10 @@ export default {
 
 .el-scrollbar__wrap {
   overflow-x: hidden;
+}
+.second-pdf {
+  height: 400px;
+  overflow: hidden;
+  overflow-y: scroll;
 }
 </style>
