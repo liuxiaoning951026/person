@@ -63,7 +63,6 @@
 import { TextLayerBuilder } from "pdfjs-dist/web/pdf_viewer";
 import "pdfjs-dist/web/pdf_viewer.css";
 
-import pdf from "vue-pdf";
 const PDFJS = require("pdfjs-dist");
 PDFJS.GlobalWorkerOptions.workerSrc = require("pdfjs-dist/build/pdf.worker.min");
 window.PDFJS = PDFJS;
