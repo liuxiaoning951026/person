@@ -1,6 +1,7 @@
 <template>
   <div class="pdf-component">
     <h1>请查看当前pdf</h1>
+    <span class="text">当前文案</span>
     <!-- <div style="border: 1px solid green">
       <canvas
         id="canvas-pdf-1"
@@ -171,7 +172,7 @@ export default {
   mounted() {
     // this.loadPdf();
     // this.loadPdfIframe();
-    this.loadVuePdf();
+    // this.loadVuePdf();
   }
 };
 </script>
@@ -209,5 +210,8 @@ export default {
   height: 400px;
   overflow: hidden;
   overflow-y: scroll;
+}
+.text {
+  color: var(--haha);
 }
 </style>
