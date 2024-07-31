@@ -23,12 +23,12 @@
       </div>
       <div class="right-part">
         <!-- src属性指向自定义页面查看器 -->
-        <iframe
+        <!-- <iframe
           id="pdfViewer"
           src="/static/default/default.html?file=dalei001.pdf"
           width="100%"
           height="100%"
-        ></iframe>
+        ></iframe> -->
 
         <!-- src属性指向PDF.js的查看器页面  -->
         <!-- <iframe
@@ -42,6 +42,7 @@
     </div>
 
     <el-row style="margin-top: 20px;border: 1px solid red;">
+      <!-- vue-pdf 直接使用 start -->
       <el-col :span="12">
         <div class="second-pdf">
           <div class="item" v-for="(item, ind) in totals" :key="ind">
@@ -50,8 +51,14 @@
         </div>
       </el-col>
 
+      <!-- vue-pdf 结合 pdf.js使用 -->
       <el-col :span="12">
-        ddf
+        <iframe
+          id="pdfViewer"
+          src="/static/default/default.html?file=dalei001.pdf"
+          width="100%"
+          height="100%"
+        ></iframe>
       </el-col>
     </el-row>
 
@@ -62,6 +69,7 @@
 <script>
 import { TextLayerBuilder } from "pdfjs-dist/web/pdf_viewer";
 import "pdfjs-dist/web/pdf_viewer.css";
+import pdf from "vue-pdf";
 
 const PDFJS = require("pdfjs-dist");
 PDFJS.GlobalWorkerOptions.workerSrc = require("pdfjs-dist/build/pdf.worker.min");
