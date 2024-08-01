@@ -68,8 +68,11 @@
 </template>
 
 <script>
+// pdfjs使用
 import { TextLayerBuilder } from "pdfjs-dist/web/pdf_viewer";
 import "pdfjs-dist/web/pdf_viewer.css";
+
+// vue-pdf使用
 import pdf from "vue-pdf";
 
 const PDFJS = require("pdfjs-dist");
