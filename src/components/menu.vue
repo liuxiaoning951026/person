@@ -46,33 +46,37 @@
         <i class="el-icon-setting"></i>
         <span slot="title">导航四</span>
       </el-menu-item>
+      <el-menu-item index="/component4">
+        <i class="el-icon-setting"></i>
+        <span slot="title">导航5</span>
+      </el-menu-item>
     </el-menu>
   </div>
 </template>
 <script>
 export default {
   computed: {
-    onRoutes () {
+    onRoutes() {
       // console.log(this.$route);
-      return this.$route.path // 计算当前路由对应的菜单项
+      return this.$route.path; // 计算当前路由对应的菜单项
     }
   },
   methods: {
-    handleOpen (key, keyPath) {
-      console.log(key, keyPath)
+    handleOpen(key, keyPath) {
+      console.log(key, keyPath);
     },
-    handleClose (key, keyPath) {
-      console.log(key, keyPath)
+    handleClose(key, keyPath) {
+      console.log(key, keyPath);
     },
-    handleSelect (key) {
-      console.log(key)
+    handleSelect(key) {
+      console.log(key);
       this.$router.push({
         path: key,
-        params: { data: 'query' }
-      })
+        params: { data: "query" }
+      });
     }
   }
-}
+};
 </script>
 <style scoped>
 .menu {

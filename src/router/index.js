@@ -80,6 +80,16 @@ export default new Router({
           path: '/pdf-component',
           name: 'pdf-component',
           component: () => import('../components/pdf-component.vue')
+        },
+        {
+          path: '/pdf-component',
+          name: 'pdf-component',
+          component: () => import('../components/pdf-component.vue')
+        },
+        {
+          path: '/component4',
+          name: 'component4',
+          component: () => import('../components/component4.vue')
         }
       ]
     }
